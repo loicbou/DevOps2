@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+name: echoname
+labels:
+app: app-echo
+spec:
+replicas: 4
+selector:
+    matchLabels:
+      app: app_echo
+containers:
+- name: echo
+image: registry.cluster.wik.cloud/public/echo
+ports:
+- containerPort: 80
+
